@@ -1,0 +1,74 @@
+/* include your css here */
+      header {
+        width: 80%;
+        background-color: blue;
+        color: #999999;
+        text-align: center;
+        margin: 0 auto;
+        }
+      header h1{
+            font-family:Serif;
+        }
+        
+      section {
+        width: 60%;
+        margin: 0 auto;
+        background-color: white;
+      }
+      
+      article {
+        background-color: #999999;
+        margin-top: 1%;
+        padding: 2%;
+      }
+      
+      h3 {
+        background-color: red;
+        color: white;
+        font-size: 1.25em;
+        line-height: 2em;
+        font-family:Cursive;
+      }
+        
+      #what{
+          width:40%;
+          float:left;
+          display:inline-block;
+      }
+      
+      #why{
+          width:40%;
+          margin:5%;
+          float:left;
+          display:inline-block;
+         
+      }
+      
+      #container{
+          width:60%;
+          margin:5px auto;
+          border:3px solid black;
+          padding: 2%;
+          
+      }
+      
+      #compare{
+          width:80%;
+          clear:both;
+          margin: 0 auto;
+          border:1px solid black;
+      }
+    
+      footer{
+        font-family:Verdana;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+      }
+    
+      p{
+        font-family:Georgia;
+        font-style:italic;
+      }
+
+
