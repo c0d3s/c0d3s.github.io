@@ -47,6 +47,12 @@ h5 {
 	color: #c94912;
 }
 
+h6 {
+	font-family: "Lucida Grande";
+	font-size: 18px;
+	font-weight: bold;
+	color: #aaaaaa;
+}
 p {
 	font-family: georgia
 }
@@ -78,10 +84,8 @@ a:visited {
 	text-decoration: none;
 }
 
-
-
-div {
-	
+img {
+	border-radius: 100%;
 }
 
 #header {
