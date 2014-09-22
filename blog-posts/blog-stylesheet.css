@@ -176,3 +176,11 @@ img {
 
 }
 
+.snippet{
+	background-color: #111111;
+	border: 1px #999999 solid;
+	font-family: monospace;
+	font-size: 12px;
+	margin: .5em;
+	padding: .5em .1em;
+}
