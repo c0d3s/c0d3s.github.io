@@ -85,7 +85,7 @@ a:visited {
 
 header {
 	background-color: #191919;
-	height: 7em;
+	height: 6.5em;
 	width: 100%;
 	border-bottom: 2px solid #999999
 }
@@ -165,7 +165,7 @@ div img {
 		display: block;
 		clear: both;
 		width: 50%;
-		margin: 40px auto;
+		margin: 75px auto;
 	}
 
 	#logo {
@@ -174,7 +174,7 @@ div img {
 		display: block;
 		clear: both;
 		width: 75%;
-		margin: -130px auto ;
+		margin: -205px auto ;
 	}
 	.button {
 		display: block;
