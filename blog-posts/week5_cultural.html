@@ -1,80 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="blog-stylesheet.css"/>
-		<title>Solo Challenge - Week 1</title>
-	</head>
+<head>
+	<link type="text/css" rel="stylesheet" href="blog-stylesheet.css"/>
+	<title>Cultural Blog - Week 5</title>
+</head>
 <body>
 	<div ID="wrapper">
-	<div ID="header">
-		<div ID="search">
-			<p><!--[ search box ] will go here --></p>
+		<div ID="header">
+			<div ID="search">
+				<p><!--[ search box ] will go here --></p>
+			</div>
+			<div ID="icons">
+				<p><!--[ RSS | EMAIL | SHARE ] will go here --></p>
+			</div>
+			<div ID="logo">
+				<h1>cody knauer</h1>
+			</div>
 		</div>
-		<div ID="icons">
-			<p><!--[ RSS | EMAIL | SHARE ] will go here --></p>
-		</div>
-		<div ID="logo">
-			<h1>cody knauer</h1>
-		</div>
+
+		<div ID="main">
+			<div ID="nav">
+				<h5>| <a href="#home">home</a> | <a href="#blog">blog</a> | <a href="#about">about</a> | <a href="#portfolio">portfolio</a> |</h5>
+			</div>
+			<div ID="slogan">
+				<h2> "Kicking ass, taking names."</h2>
+			</div>
+
+			<div ID="title-image">
+				<div ID="title">
+					<h3>THIS IS MY BLOG</h3>
+				</div>
+				<div ID="image">
+					<p> <img src="../imgs/cody.blogpic.jpg"> </p>
+				</div>
+			</div>
+			<div ID="content">
+				<h4>Posted on 28 SEPTEMBER, 2014</h4>
+			</br>
+			<h5>pairing & feedbackination</h5>
+		</br></br>
+
+		<p>Pair programming is central to the student experience at DBC.  I must admit, I was a bit hesitant to begin my pairing adventures at first.  When you are cast into a virtual "classroom" with 60 or so other students of varying background and ability, pairing with a stranger can be a bit intimidating.  Would I embarass myself in front of someone with a Master's degree in CS? Or will I be miles ahead of my peer pair and feel held back?  It's impossible to know before you give it a shot, but you can easily deceive yourself into believing you will inevetiably be mismatched.</p><br>
+		<p>Before I paired for the first time, I watched a fireside chat with Shereef.  He answered what I imagine is a frequently asked question -- in so many words, "Since DBC students have a pretty broad spectrum of skill and experience with coding upon enrolling, how can peer pairs be succesffuly?"  His answer was reassuring -- again I am parphrasing, but the gist was 'it's like we are all walking from San Fransisco to Seattle.  Some of us may feel we are starting from scratch, some people have a ten step head start, others may have a hundred step head start.  But we all have a long way to go, and we're going to get there together.'</p><br>
+		<p>My pairing experience thus far has been as advertised. I honestly have yet to be paired with someone who had my same level of coding expertise, but this has not hindered the experience.  I've been on both sides of that coin -- seeking guidance from someone who far outmatched by skills, and helping another who was struggling with the curriculum.  In both cases, my comfort level with the topic at hand was reinforced.  We've solved every challenge thus far, some in two minutes, others in two hours, but successfully all the same.</p><br>
+		<p>Of course feedback is vital to this process.  I love getting feedback, and have to say thus far I've received some great insight into my cultural and technical strengths and weaknesses.  Overall, it seems my peers perceive me largely the way I'd like to be, but constructive criticism has been present and welcome.  The most valuable piece I've received yet was "ask yourself: 'what is the simplest way to solve this problem?'  And the simplest way isn't always the easiest."  Since receiving this comment, I have slowed down my thought process at times in an attempt to reevaluate the problem at hand and see it with fresh eyes, or sniff out inefficiencies when refactoring, rather than putting stopgaps in place to simply get things running.</p><br>
+		<p>Writing feedback is equally enlightening.  Honestly, the most challenging aspect of pairing for me is feedback.  I think this will be easier once we gather in person for Phase 1 onsite, but for the time being, it can be difficult to make critical comments "kind."  Without body language or inflection, feedback can feel impersonal, and it can be difficult to properly convey the tone you wish to strike without leaving things open for unintended interpretation.</p>
+
+
 	</div>
 
-	<div ID="main">
-		<div ID="nav">
-			<h5>| <a href="#home">home</a> | <a href="#blog">blog</a> | <a href="#about">about</a> | <a href="#portfolio">portfolio</a> |</h5>
-		</div>
-		<div ID="slogan">
-			<h2> "Kicking ass, taking names."</h2>
-		</div>
-		
-			<div ID="title-image">
-			<div ID="title">
-				<h3>THIS IS MY BLOG</h3>
-			</div>
-			<div ID="image">
-				<p> <img src="../imgs/cody.blogpic.jpg"> </p>
-			</div>
-		</div>
-		<div ID="content">
-			<h4>Posted on 21 SEPTEMBER, 2014</h4>
-		</br>
-			<h5>what the heck is Enumerable#group_by?</h5>
-		</br></br>
-			<p>
-Perhaps we should start with "what the heck is Enumerable?" Well, Enumerable methods provide powerful ways to loop.  It's one of the reasons you hardly ever see for loops in Ruby.  In addition to simply iterating through code over and over again, Enumerable provides ways to search, alter, and organize your data.  As you may have guessed my focus today is on  Enumerable#groub_by, which falls under the "organize" category.
-<br><br>
-Enumerable#group_by will take your boring, disorganized array and return a pretty new hash.  Let's say you have an array of the numbers 1 through 10, but you want to separate the odd numbers from the even numbers.  Observe:
-<br><br>
-<div class="snippet">irb(main):001:0> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].group_by {|number| number % 2}<br>
-=> {1=>[1, 3, 5, 7, 9], 0=>[2, 4, 6, 8, 10]}</div>
-<br><br>
-Fittingly, our group_by method grouped the even numbers into one array, and the odd numbers into another and stored this data in theform of a hash.  Our arrays are now values, the keys to which are enumerators (0 for the numbers where the expression number % 2 evaluates to 0, and 1 for those that evaluate to 1).  But the keys don't have to be numbers.  Let's get a little more sophisticated.
-<br><br>
-Say we have a list of names stored in an array in no particular order.  We would like to group these names together alphabetically.  Enter Enumerable#group_by.
-<br><br>
-<div class="snippet">irb(main):002:0> names = ["Harry", "Larry", "Barry", "Lidia", "Zeke", "Lisa", "Heidi", "Barbara"]<br>
-=> ["Harry", "Larry", "Barry", "Lidia", "Zeke", "Lisa", "Heidi", "Barbara"]<br>
-irb(main):003:0> names.group_by {|name| name[0]}<br>
-=> {"H"=>["Harry", "Heidi"], "L"=>["Larry", "Lidia", "Lisa"], "B"=>["Barry", "Barbara"], "Z"=>["Zeke"]}</div>
-<br><br>
-In this instance, the keys to our hash are the first letters of each name.  We are able to specify this in the block of code (the bit just after the pipes) where we say name[0].  In this instance, name is the element we are working with, which happens to be a string.  We go to the [0] index -- aka the first letter -- and this becomes our key.  Enumerable#group_by is good for more than just alphabetic sorting.
-<br><br>
-Let's take that same list of names and group by the length of each name.
-<br><br>
-<div class="snippet">irb(main):004:0> names.group_by {|name| name.length}<br>
-=> {5=>["Harry", "Larry", "Barry", "Lidia", "Heidi"], 4=>["Zeke", "Lisa"], 7=>["Barbara"]}</div>
-<br><br>
-Or maybe we just want to know which names are "long" or "short".  
-<br><br>
-<div class="snippet">irb(main):005:0>names.group_by { | name | name.length < 5}<br>
-=> {false=>["Harry", "Larry", "Barry", "Lidia", "Heidi", "Barbara"], true=>["Zeke", "Lisa"]}</div>
-<br><br>
-Sure, five letters is an arbitrary number to separate long and short, but in this case our keys are boolean values -- "true" for names less than five characters long and "false" for those that are longer.
-<br><br>
-The possibilities are virtually endless.  Enumerable#group_by gives you a wide array (pun intended) of options for organizing your data.
-<br><br>
-</p>
-		</div>
-	</div>
+</div>
+</div>
 <div ID="footer">
 	<h5>| <a href="#home">home</a> | <a href="#blog">blog</a> | <a href="#about">about</a> | <a href="#portfolio">portfolio</a> | <a href="#RSS">rss</a> | <a href="#email">email</a> | <a href="#share">share</a> |</h5>
 </div>
