@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="blog-stylesheet.css"/>
+	<title>Technical Blog - Week 5</title>
+</head>
+<body>
+	<div ID="wrapper">
+		<div ID="header">
+			<div ID="search">
+				<p><!--[ search box ] will go here --></p>
+			</div>
+			<div ID="icons">
+				<p><!--[ RSS | EMAIL | SHARE ] will go here --></p>
+			</div>
+			<div ID="logo">
+				<h1>cody knauer</h1>
+			</div>
+		</div>
+
+		<div ID="main">
+			<div ID="nav">
+				<h5>| <a href="#home">home</a> | <a href="#blog">blog</a> | <a href="#about">about</a> | <a href="#portfolio">portfolio</a> |</h5>
+			</div>
+			<div ID="slogan">
+				<h2> "Kicking ass, taking names."</h2>
+			</div>
+
+			<div ID="title-image">
+				<div ID="title">
+					<h3>THIS IS MY BLOG</h3>
+				</div>
+				<div ID="image">
+					<p> <img src="../imgs/cody.blogpic.jpg"> </p>
+				</div>
+			</div>
+			<div ID="content">
+				<h4>Posted on 28 SEPTEMBER, 2014</h4>
+			</br>
+			<h5>staying classy</h5>
+		</br></br>
+		<p>The concept of a Class is integral to the workings of an object-oriented programming language like Ruby.  It allows us to create objects with certain shared characteristics (ie methods and variables).  Think of a Class like a blueprint: it has contains the outlines for what qualities an object will have.  When we build, or <em>initialize </em>an instance of our Class, we fill in the details.</p><br>
+		<p>Let's say we have a Car Class.  With any mass produced car, a certain formula is followed so that all makes and models have some shared core attributes.  Every Honda Civic is going to have four wheels, a chassis, an engine, etc.  But there's also optional features to consider.  Do we want four doors or two?  A manual transmission or automatic?  How about a sunroof?  Let's translate this scenario to code.</p></br>
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Car</span>
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">initialize</span><span style="color: #f8f8f2">(doors,</span> <span style="color: #f8f8f2">transmission,</span> <span style="color: #f8f8f2">sunroof</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #66d9ef">raise</span> <span style="color: #66d9ef">ArgumentError</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">new(</span><span style="color: #e6db74">&quot;Must select 2 or 4 doors&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">unless</span> <span style="color: #f8f8f2">doors</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">doors</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">4</span>
+    <span style="color: #66d9ef">raise</span> <span style="color: #66d9ef">ArgumentError</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">new(</span><span style="color: #e6db74">&quot;Must select &#39;manual&#39; or &#39;automatic&#39; transmission&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">unless</span> <span style="color: #f8f8f2">transmission</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;manual&quot;</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">transmission</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;automatic&quot;</span>
+    <span style="color: #f8f8f2">@doors</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">doors</span>
+    <span style="color: #f8f8f2">@transmission</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">transmission</span>
+    <span style="color: #f8f8f2">@sunroof</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sunroof</span>
+  <span style="color: #66d9ef">end</span>
+<span style="color: #66d9ef">end</span> 
+</pre></td></tr></table></div>
+
+		<br>
+		<p>We start defining our Car class by making an initialize method.  This allows us to create a new instance of Car and pass the arguments that specify the number of doors, the type of transmission, and whether there is a sunroof; note: sunroof is defaulted to false so that if we do not pass a third argument, the car will not, by default, include a sunroof.  The next two lines are somewhat self explanatory -- they raise arguments and disallow the creation of an instance of Car that does not have either 2 or 4 doors, or has something other than an automatic or manual transmission.  But what about those variables with the @ in front of them?</p><br>
+		<p>These are instance variables!  They are vital to our the smooth operation of the other methods we will be creating in our Car class.  Instance variables are simply variables that can be used in all our instance methods -- ie methods that can we can call on any instance of car.  We certainly want to be able to do more with our instance of Car than simply create it.  Let's add a couple more methods to clarify these definitions.</p><br>
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Car</span>
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">initialize</span><span style="color: #f8f8f2">(doors,</span> <span style="color: #f8f8f2">transmission,</span> <span style="color: #f8f8f2">sunroof</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #66d9ef">raise</span> <span style="color: #66d9ef">ArgumentError</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">new(</span><span style="color: #e6db74">&quot;Must select 2 or 4 doors&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">unless</span> <span style="color: #f8f8f2">doors</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">doors</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">4</span>
+    <span style="color: #66d9ef">raise</span> <span style="color: #66d9ef">ArgumentError</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">new(</span><span style="color: #e6db74">&quot;Must select &#39;manual&#39; or &#39;automatic&#39; transmission&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">unless</span> <span style="color: #f8f8f2">transmission</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;manual&quot;</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">transmission</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;automatic&quot;</span>
+    <span style="color: #f8f8f2">@doors</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">doors</span>
+    <span style="color: #f8f8f2">@transmission</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">transmission</span>
+    <span style="color: #f8f8f2">@sunroof</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sunroof</span>
+  <span style="color: #66d9ef">end</span>
+
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">get_style</span>
+    <span style="color: #f8f8f2">@doors</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">?</span> <span style="color: #f8f8f2">style</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;coupe&quot;</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">style</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;sedan&quot;</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #e6db74">&quot;This car is a #{</span><span style="color: #f8f8f2">style</span><span style="color: #e6db74">}.&quot;</span>
+  <span style="color: #66d9ef">end</span>
+
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">get_mpg</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">@doors</span>
+    <span style="color: #66d9ef">when</span> <span style="color: #ae81ff">2</span>
+      <span style="color: #f8f8f2">@transmission</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;manual&quot;</span> <span style="color: #f8f8f2">?</span> <span style="color: #f8f8f2">mpg</span> <span style="color: #f92672">=</span> <span style="color: #f92672">[</span><span style="color: #ae81ff">29</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">36</span><span style="color: #f92672">]</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">mpg</span> <span style="color: #f92672">=</span> <span style="color: #f92672">[</span><span style="color: #ae81ff">27</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">34</span><span style="color: #f92672">]</span>
+    <span style="color: #66d9ef">when</span> <span style="color: #ae81ff">4</span>
+      <span style="color: #f8f8f2">@transmission</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;manual&quot;</span> <span style="color: #f8f8f2">?</span> <span style="color: #f8f8f2">mpg</span> <span style="color: #f92672">=</span> <span style="color: #f92672">[</span><span style="color: #ae81ff">28</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">35</span><span style="color: #f92672">]</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">mpg</span> <span style="color: #f92672">=[</span><span style="color: #ae81ff">26</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">34</span><span style="color: #f92672">]</span>
+    <span style="color: #66d9ef">end</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #e6db74">&quot;The mpg of this car is #{</span><span style="color: #f8f8f2">mpg</span><span style="color: #f92672">[</span><span style="color: #ae81ff">0</span><span style="color: #f92672">]</span><span style="color: #e6db74">} city and #{</span><span style="color: #f8f8f2">mpg</span><span style="color: #f92672">[</span><span style="color: #ae81ff">1</span><span style="color: #f92672">]</span><span style="color: #e6db74">} highway.&quot;</span>
+  <span style="color: #66d9ef">end</span>
+
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">sunroof?</span>
+    <span style="color: #f8f8f2">@sunroof</span> <span style="color: #f92672">==</span> <span style="color: #66d9ef">true</span> <span style="color: #f8f8f2">?</span> <span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;This car has a sunroof&quot;</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;This car does not have a sunroof&quot;</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">result</span>
+<span style="color: #66d9ef">end</span>
+</pre></td></tr></table></div>
+
+		<br>
+		<p>Here, inside our Class definition of Car once again, we define instance methods to get the style of our car (coupe or sedan), see the mpg of our car (based upon the number of doors and transmission), and check if our car has a sunroof.  You will notice each one of these methods uses the aforementioned instance variables to produce a value and return a string.  What would happen if we didn't use instance variables?  Well, these methods would simply not function.  Our Car#get_style method would not be able to see how many doors our car has, since the doors variable originates in the initialize function.  Similarly Car#get_mpg would not be able to see the number of doors we have selected, nor would Car#sunroof? be able to see whether an instance of Car has a sunroof.  Because in Car#initialize we set the parameters equal to instance variables, our program works, as the arguments that are passed to Car#initialize when we create a new instance will be visible to the other methods in our Car Class.  Notice too that in our Car#get_mpg instance method we use a local variable (<em>not</em> an instance variable) for style.  This is because style is only accessed within get_style, making an instance variable unnecssary.  Let's demonstrate how this all works using a printout of our terminal from irb.</p><br>
+		<div class="snippet">irb(main):001:0> car1 = Car.new(2, "manual", true)<br>
+			=> #Car:0x007ff39398de18 @doors=2, @transmission="manual", @sunroof=true><br>
+			irb(main):002:0> car1.get_style<br>
+			=> "This car is a coupe."<br>
+			irb(main):003:0> car1.get_mpg<br>
+			=> "The mpg of this car is 29 city and 36 highway."<br>
+			irb(main):004:0> car1.sunroof?<br>
+			=> "This car has a sunroof"<br>
+		</div>
+		<p>We start by creating a new instance of Car called car1 with 2 doors, a manual transmission, and a sunroof.  Now we can test our instance methods.  We call get_style on car one, and sure enough, we are informed our car is a coupe as a result of our 2 doors.  We then test our mpg, which takes into account both our number of doors and transmission.  By calling this method, we see car1 has a fuel economy of 29 city and 36 highway.  Finally, we check on our sunroof.  Calling sunroof? on car1 returns the affirmative.  Was this an overly simplistic, contrived example used to demonstrate a point? Perhaps.  But knowing what we now know about Classes will help us build objects more effectively.</p></br>
+
+
+	</div>
+
+</div>
+</div>
+<div ID="footer">
+	<h5>| <a href="#home">home</a> | <a href="#blog">blog</a> | <a href="#about">about</a> | <a href="#portfolio">portfolio</a> | <a href="#RSS">rss</a> | <a href="#email">email</a> | <a href="#share">share</a> |</h5>
+</div>
+</div>
+</body>
