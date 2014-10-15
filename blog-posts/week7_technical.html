@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link type="text/css" rel="stylesheet" href="blog-stylesheet.css"/>
-	<title>Technical Blog - Week 6</title>
+	<title>Technical Blog - Week 7</title>
 </head>
 <body>
 	<div ID="wrapper">
@@ -35,15 +35,15 @@
 				</div>
 			</div>
 			<div ID="content">
-				<h4>Posted on 5 OCTOBER, 2014</h4>
+				<h4>Posted on 11 OCTOBER, 2014</h4>
 			</br>
-			<h5>ruby variable scope</h5>
+			<h5>sql injection</h5>
 			</br></br>
-			<p>Ruby makes provisions for four dinstinct types of variables: local, instance, class, and global.  As their names may imply, the differences between these types lie in their scope, or accessibility.  Each aforementioned variable type takes a step up in scope from the previous one.  We begin with the humble local variable.</p><br>
-			<p><b>Local variables</b> are only accessible within the code in which they are defined.  If a local variable is declared within a method, it will not be accessible outside said method.  The same goes for loops, blocks, etc.  Local variables are easily recognized; convention states they only contain lower case letters, numbers, and underscores.</p><br>
-			<p><b>Instance variables</b> are accessible everywhere in a specific instance of an object.  They are typically declared in the #initialize method of a class.  This all means that if we define an instance variable in #initialize and we want to use this variable in another method like #double_number, we can access the same variable.  If the instance variable was instead a local variable, our #double_number method would not be able to see the variable.  Keep in mind, though, that if we create a separate instance of a class, the variable will not be the same, as it is local to a specific instance.  Instance variables are recognizable by the fact that they always contain the @ symbol as it's first character.</p><br>
-			<p><b>Class variables</b> expand on the scope of instance variables by making the variable visible to <em>all</em> instances of a class.  This means that there is only one variable with one value that exists for every object that is instantiated from a class.  Remember that if you change the value of this variable in one instance of a class, the value will change in all other instances as well.  Class variables are recognized by being prefixed by two @@ symbols.</p><br>
-			<p><b>Global variables</b> have the greatest scope -- they are accesible from <em>anywhere</em> in a Ruby program.  Declare a global variable in a block, method, class, instance, what have you, and your Ruby program will be able to make use of it in any other block, method, class, instance, what have you.  Global variables are prefixed with a $ and conventionally are comprised of all capital letters.</p><br> 
+			<p>SQL injection is a common technique used by hackers to gain access to or otherwise manipulate information in a database.  A malicious user can inject SQL commands into an SQL statement via unchecked input on a web page, thereby compromising the security of the web application.  While SQL injection attacks are all-too-common, they are easily preventable.  But how do they work?</p><br>
+			<p>Consider the design of a simple web app.  In our imaginary scenario, usernames and passwords are stored in a database, and upon visiting a website, a user is prompted to enter his/her user name and password in two separate fields.  The creator of this app has designed it to then take the input from these two fields and place it in the middle of an SQL statement.  A savvy hacker may easily exploit this vulnerability by placing their own language in these fields that is then injected into the existing SQL statement.</p><br>
+			<p>The easiest way to avoid such exploitation is to simply check the input a user provides before it is placed into the SQL statement.  One may even decide to 'blacklist' certain words that used in SQL syntax to achieve this aim.  This, however, is not the best method to take, considering the syntax of SQL features words common to the English language and a lot of regularly-used punctuation, and we wouldn't want to unneccessarily prohibit a long list of words/characters to be used in usernames or passwords.</p><br>
+			<p>The best way to prevent SQL injection is to parameterize the input.  When we do this, we effectively isolate the input, where it is treated like common data.  This way, the input provided by the user is never directly injected into the SQL statement, and anything the user types into input fields cannot be executed.</p><br>
+			<p>There are of course other measures a developer can take to prevent exploitation.  An example of this would be encrypting the data stored within the database along with the input a user provides.  This way when an SQL statement parses through the encrypted input, the actual characters the user has typed in will never be executed.  That being said, parameterization is the most effective proven method.</p><br>
 
 
 	</div>
