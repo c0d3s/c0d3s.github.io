@@ -1,8 +1,14 @@
 
 
 html {
-	background-color: #292929;
+	background-color: #191919;
 	color: #ffffff;
+}
+
+div {
+	padding: 3em;
+	margin: 0 auto;
+	text-align: center;
 }
 
 * {
@@ -14,6 +20,7 @@ html {
 }
 
 h1 {
+	align: center;
 	font-family: Georgia;
 	font-size: 3em;
 	font-weight: bold;
