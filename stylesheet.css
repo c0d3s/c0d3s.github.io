@@ -19,7 +19,7 @@ body {
 	width: 100%;
 }
 
-div {
+.index {
 	width: 100%;
 	margin-top: 3em;
 	align-items: center;
@@ -27,6 +27,16 @@ div {
 	justify-items: center;
 	justify-content: center;
 	text-align: center;
+}
+
+.blog {
+	width: 600px;
+	margin-top: 3em;
+	align-items: left;
+	align-content: left;
+	justify-items: left;
+	justify-content: left;
+	text-align: left;
 }
 
 h1 {
@@ -57,9 +67,17 @@ p {
 	font-weight: bold;
 }
 
+
+li {
+	font-family: georgia;
+	font-style: italic;
+	font-weight: bold;
+}
+
 a {
 	text-decoration: none;
 }
+
 
 .button {
 	font-family: georgia;
